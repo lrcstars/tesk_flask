@@ -7,7 +7,7 @@ def index():
     config_mode = request.args.get('config_mode')
     data = request.get_json()
     print config_ns
-    print congig_model
+    print config_mode
     print data
     return '<h1>Hello World!</h1>'
 
