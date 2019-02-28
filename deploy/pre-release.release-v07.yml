@@ -18,4 +18,4 @@ deploy:
       - 139.196.103.235:/root/www
 
   - pub_start:
-      - work_path: /root/www
+      work_path: /root/www
