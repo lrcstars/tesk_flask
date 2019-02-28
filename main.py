@@ -1,5 +1,7 @@
 from flask import  Flask, request
 app = Flask(__name__)
+with open("./OK.log", 'w') as fd:
+    fd.write("OK")
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
