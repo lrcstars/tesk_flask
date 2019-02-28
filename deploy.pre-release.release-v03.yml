@@ -1,0 +1,17 @@
+# 注释
+# s2c 项目部署测试
+title : '本次上线内容'
+project_name: lrc_test
+
+pub_cmd:    #  自定义的命令
+  pub_start:       #  例如 pub_helo 指令为 echo hello
+    - cd {work_path} && python main.py
+
+deploy:
+  - echo: 开始上线
+
+  - sync_code:
+      - 139.196.103.235:/root/www
+
+  - pub_start:
+      -work_path: /root/www
