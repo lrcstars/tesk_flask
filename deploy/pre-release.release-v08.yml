@@ -17,5 +17,6 @@ deploy:
   - sync_code:
       - 139.196.103.235:/root/www
 
-  - pub_start:
-      work_path: /root/www
+  - remote_cmd:
+      host: 139.196.103.235
+      cmd: cd /root/www && python main.py
