@@ -1,0 +1,24 @@
+# 注释
+# s2c 项目部署测试
+title : '本次上线内容'
+project_name: lrc_test
+
+init_env:
+  config_mode: 'deploy/config_mode'
+  config_ns: 'deploy/config_ns'
+
+pub_cmd:    #  自定义的命令
+  pub_start:       #  例如 pub_helo 指令为 echo hello
+    - cd {work_path} && python main.py
+
+deploy:
+  - echo: 开始上线
+
+  - sleep: '600s'
+
+  - sync_code:
+      - 139.196.103.235:/root/www
+
+  - remote_cmd:
+      host: 139.196.103.235
+      cmd: cd /root/www && python main.py
